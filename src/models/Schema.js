@@ -13,6 +13,10 @@ const ProjectSchema = new mongoose.Schema({
 });
 
 ProjectSchema.virtual('image_url').get(function () {
+  if (process.PRODUCTION === 'PRODUCTION') {
+    return `${process.PRODUCTION}/files/${this.image}`;
+  }
+
   return `http://localhost:3333/files/${this.image}`;
 });
 
