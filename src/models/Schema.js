@@ -12,11 +12,6 @@ const ProjectSchema = new mongoose.Schema({
   },
 });
 
-ProjectSchema.virtual('image_url').get(() => {
-  if (process.PRODUCTION === 'PRODUCTION') {
-    return `${process.PRODUCTION}/files/${this.image}`;
-  }
-  return `https://myportfolio007.herokuapp.com/files/${this.image}`;
-});
+ProjectSchema.virtual('image_url').get(() => `${process.BASE_UPLOAD}/files/${this.image}`);
 
 module.exports = mongoose.model('Project', ProjectSchema);
