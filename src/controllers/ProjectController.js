@@ -1,6 +1,6 @@
-import ProjectSchema from '../models/Schema';
+const ProjectSchema = require('../models/Schema');
 
-export default {
+module.exports = {
 
   async index(req, res) {
     const project = await ProjectSchema.find();

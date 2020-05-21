@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import multer from 'multer';
+const { Router } = require('express');
+const multer = require('multer');
 
-// import multerGoogleStorage from 'multer-google-storage';
-import ProjectController from './controllers/ProjectController';
-import uploadConfig from './config/upload';
+// const multerGoogleStorage =require( 'multer-google-storage';
+const ProjectController = require('./controllers/ProjectController');
+const uploadConfig = require('./config/upload');
 
 
 const router = Router();
@@ -19,4 +19,4 @@ router.put('/create-project/:id', ProjectController.update);
 router.delete('/create-project/:id', ProjectController.delete);
 
 
-export default router;
+module.exports = router;

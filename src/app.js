@@ -1,9 +1,9 @@
-import express from 'express';
-import mongosse from 'mongoose';
-import cors from 'cors';
-import path from 'path';
-import dotenv from 'dotenv';
-import routes from './routes';
+const express = require('express');
+const mongosse = require('mongoose');
+const cors = require('cors');
+const path = require('path');
+const dotenv = require('dotenv');
+const routes = require('./routes');
 
 
 dotenv.config();
@@ -33,4 +33,4 @@ class App {
   }
 }
 
-export default new App().server;
+module.exports = new App().server;
